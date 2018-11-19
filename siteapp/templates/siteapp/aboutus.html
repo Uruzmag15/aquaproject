@@ -1,0 +1,45 @@
+{% extends 'siteapp/empty.html' %}
+
+{% block metakeyw %}
+    <meta name="keywords" content="Натахтари, Саирме, Сно, Набеглави сертификат Аква Мир официальный импортер грузинских безалкогольных напитков"/>
+{% endblock metakeyw %}
+
+{% block metadescr %}
+    <meta name="description" content='"Аква Мир" - официальный импортер грузинских напитков ТМ "НАТАХТАРИ", "САИРМЕ", "СНО", "НАБЕГЛАВИ" в России. Сертификаты соответствия'/>
+{% endblock metadescr %}
+
+{% block title %}
+    <title>О компании "Аква Мир"</title>
+{% endblock title %}
+
+{% block content1 %}
+
+	<div class="row center">
+        <h1 class="flow-text">О нас</h1>
+        <div class="divider"></div>
+    </div>
+    <div>
+        <p class="large-text">С 2011 года компания "Аква Мир" официальный представитель ТМ "НАТАХТАРИ" на рынке России.
+            <br>
+            С 2015 года мы предлагаем минеральные воды ТМ "САИРМЕ".
+            <br>
+            С 2017 года в нашем портфеле появилась продукция ТМ "СНО" и ТМ "НАБЕГЛАВИ".
+            <br>
+            Наша компания представляет на рынке России очень качественные и достойные напитки произведенные в Грузии.
+        </p>
+    </div>
+    <h5>Сертификаты соответствия</h5>
+    <div class="row">
+        <div class="certcard z-depth-3">
+            <img class="certphoto materialboxed" data-caption='"Натахтари"' src="{{ MEDIA_URL }}img/cert_nat.jpg" alt="Сертификат Натахтари">
+        </div>
+        <div class="certcard z-depth-3">
+            <img class="certphoto materialboxed" data-caption='"Саирме"' src="{{ MEDIA_URL }}img/cert_sai.jpg" alt="Сертификат Саирме">
+        </div>
+        <div class="certcard z-depth-3">
+            <img class="certphoto materialboxed" data-caption='"Родники Саирме"' src="{{ MEDIA_URL }}img/cert_rod_sai.jpg" alt="Сертификат Родники Саирме">
+        </div>
+    </div>
+    <div class="divider"></div>
+	
+{% endblock content1 %}

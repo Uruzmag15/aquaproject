@@ -1,0 +1,33 @@
+{% extends 'siteapp/empty.html' %}
+
+{% block metakeyw %}
+    <meta name="keywords" content="Каталог грузинских безалкогольных напитков Натахтари Саирме Сно Набеглави"/>
+{% endblock metakeyw %}
+
+{% block metadescr %}
+    <meta name="description" content='Каталог грузинских безалкогольных напитков ТМ "НАТАХТАРИ", "САИРМЕ", "СНО", "НАБЕГЛАВИ"'/>
+{% endblock metadescr %}
+
+{% block title %}
+    <title>Каталог грузинских безалкогольных напитков</title>
+{% endblock title %}
+
+{% block content1 %}
+
+    <div class="row center">
+        <h1 class="flow-text">Бренды</h1>
+        <div class="divider"></div>
+        <div  class="row center"></div>
+        <div  class="row center">
+            {% for brand in brands %}
+                <a href="{% url 'brand_detail' pk=brand.pk %}">
+                    <div class="brandcard z-depth-3">
+                        <img class="brandlogo" src="{{ MEDIA_URL }}{{ brand.logo }}" alt="{{ brand.name }} логотип">
+                        <h5 class="brandcard-title"><span>{{ brand.name }}</span></h5>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="divider"></div>
+	</div>
+{% endblock content1 %}

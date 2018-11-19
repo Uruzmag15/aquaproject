@@ -1,0 +1,43 @@
+{% extends 'siteapp/base.html' %}
+
+{% block dropdown %}
+
+	<ul id="dropdown1" class="dropdown-content">
+		<li><a class="blue-grey-text text-darken-4" href="{% url 'catalog' %}">Все бренды</a></li>
+		<li class="divider"></li>
+		{% for brand in brands %}
+			<li><a class="blue-grey-text text-darken-4" href="{% url 'brand_detail' pk=brand.pk %}">{{ brand.name }}</a></li>
+		{% endfor %}
+	</ul>
+	<ul id="dropdown2" class="dropdown-content">
+		<li><a  class="blue-grey-text text-darken-4" href="{% url 'catalog' %}">Все бренды</a></li>
+		<li class="divider"></li>
+		{% for brand in brands %}
+			<li><a class="blue-grey-text text-darken-4" href="{% url 'brand_detail' pk=brand.pk %}">{{ brand.name }}</a></li>
+		{% endfor %}
+	</ul>
+	
+{% endblock dropdown %}
+
+{% block content %}
+
+	<div class="container" id="headbanner">
+		<div class="row center">
+            <h1 class="header col s12 light center flow-text white-text upper-case">ОФИЦИАЛЬНЫЙ ИМПОРТЕР ГРУЗИНСКИХ
+                безалкогольных напитков ТМ "<strong>НАТАХТАРИ</strong>", "<strong>Саирме</strong>", "<strong>СНО</strong>",
+                "<strong>НАБЕГЛАВИ</strong>" В РФ</h1>
+		</div>
+		<div class="row center">
+            {% for brand in brands %}
+                {% if brand.name.upper == "НАТАХТАРИ" %}
+			        <a class="waves-effect waves-light btn-large lime accent-3 blue-text text-darken-1 z-depth-5"
+                       href="{% url 'brand_detail' pk=brand.pk %}">Ассортимент</a>
+                {% endif %}
+            {% endfor %}
+		</div>
+	</div>
+	<div class="banner">
+		<img id="imgbanner" src="{{ MEDIA_URL }}img/ban_nat1.jpg" alt="Натахтари баннер" />
+	</div>
+	
+{% endblock content %}

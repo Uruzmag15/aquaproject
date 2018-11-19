@@ -1,0 +1,346 @@
+/* *** Materializecss *** */
+
+div .brand-logo {
+	 padding-left: 5px;
+}
+
+#nav-mobile {
+	 margin-right: 5px;
+}
+
+/* .tabs */
+
+.tabs {
+    height: 60px;
+    width: 101.5%;
+    background-color: white;
+    margin: 0 8px 0 -4px;
+}
+
+.tabs .tab {
+    line-height: 100%;
+    height: 95%;
+    margin: 0 2px;
+}
+
+.tabs .tab:first-child {
+    margin: 0 2px 0 4px;
+}
+
+.tabs .tab a {
+    color: white;
+	background-color: #42a5f5;
+    padding: 4px 24px;
+    font-size: 70%;
+}
+
+.tabs .tab a:hover {
+	color: white;
+	background-color: #64b5f6;
+}
+
+.tabs .tab a.active {
+	color: #42a5f5;
+	background-color: white;
+}
+
+.tabs .indicator {
+	background-color: white;
+}
+
+/* .flow-text */
+
+h1.flow-text {
+	font-weight: 400;
+}
+
+h1.header.flow-text {
+	font-weight: 200;
+}
+
+.large-text {
+	font-size: large;
+}
+
+.medium-text {
+	font-size: medium;
+}
+
+@media only screen and (min-width: 360px) {
+  h1.flow-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-width: 390px) {
+  h1.flow-text {
+    font-size: 1.824rem;
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  h1.flow-text {
+    font-size: 1.848rem;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  h1.flow-text {
+    font-size: 1.872rem;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  h1.flow-text {
+    font-size: 1.896rem;
+  }
+}
+
+@media only screen and (min-width: 510px) {
+  h1.flow-text {
+    font-size: 1.92rem;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  h1.flow-text {
+    font-size: 1.944rem;
+  }
+}
+
+@media only screen and (min-width: 570px) {
+  h1.flow-text {
+    font-size: 1.968rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  h1.flow-text {
+    font-size: 1.992rem;
+  }
+}
+
+@media only screen and (min-width: 630px) {
+  h1.flow-text {
+    font-size: 2.016rem;
+  }
+}
+
+@media only screen and (min-width: 660px) {
+  h1.flow-text {
+    font-size: 2.04rem;
+  }
+}
+
+@media only screen and (min-width: 690px) {
+  h1.flow-text {
+    font-size: 2.064rem;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  h1.flow-text {
+    font-size: 2.088rem;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  h1.flow-text {
+    font-size: 2.112rem;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  h1.flow-text {
+    font-size: 2.136rem;
+  }
+}
+
+@media only screen and (min-width: 810px) {
+  h1.flow-text {
+    font-size: 2.16rem;
+  }
+}
+
+@media only screen and (min-width: 840px) {
+  h1.flow-text {
+    font-size: 2.184rem;
+  }
+}
+
+@media only screen and (min-width: 870px) {
+  h1.flow-text {
+    font-size: 2.208rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  h1.flow-text {
+    font-size: 2.232rem;
+  }
+}
+
+@media only screen and (min-width: 930px) {
+  h1.flow-text {
+    font-size: 2.256rem;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  h1.flow-text {
+    font-size: 2.28rem;
+  }
+}
+
+@media only screen and (max-width: 362px) {
+  h1.flow-text {
+    font-size: 1.6rem;
+  }
+  nav .brand-logo {
+    font-size: 1.7rem;
+    left: 53%;
+    width: 58%;
+  }
+  nav i,
+  nav [class^="mdi-"], nav [class*="mdi-"],
+  nav i.material-icons {
+    font-size: 1.5rem;
+  }
+  .tabs {
+    height: 40px;
+  }
+  .tabs .tab a {
+    padding: 4px 4px;
+  }
+  .large-text {
+      font-size: medium;
+  }
+  .medium-text {
+      font-size: 1em;
+  }
+}
+
+nav .brand-logo i,
+nav .brand-logo [class^="mdi-"], nav .brand-logo [class*="mdi-"],
+nav .brand-logo i.material-icons {
+  float: left;
+  margin-right: 0px;
+}
+
+strong {
+  font-weight: 300;
+}
+
+/* MyCSS */
+
+html {
+    line-height: 1.5;
+    font-family: "Roboto", sans-serif;
+	background: url("../img/bck.jpg");
+    background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+}
+
+body {
+	display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+h1 {
+    color: #424242;
+	font-size: xx-large;
+}
+
+iframe {
+	width: 100%;
+	min-height: 350px;
+}
+
+#headbanner {
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+.middle-text {
+	vertical-align: middle;
+}
+
+.banner {
+	background-color: white;
+}
+
+#imgbanner {
+	width: 100%;
+}
+
+.empty_background {
+	padding: 17px;
+	display: block;
+	min-height: 58vh;
+}
+
+.brandcard {
+	width:250px;
+	height:250px;
+	margin: 15px;
+	padding: 10px;
+	display:inline-block;
+	vertical-align: middle;
+}
+
+.brandlogo {
+	height: 75%;
+	max-width: 100%;
+}
+
+.brandlogo_detail {
+	width: 100%;
+    padding: 10px;
+}
+
+.branddescr {
+	min-height: 100px;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.drinkphoto {
+	width: 100%;
+}
+
+.drinktitle {
+	text-align: center;
+}
+
+div.col.s12.akvalogo {
+	height: 100px;
+}
+
+.akvalogo {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.upper-case {
+	text-transform: uppercase;
+}
+
+.certcard {
+	width: 150px;
+	height: 200px;
+	margin: 15px;
+	padding: 10px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.certphoto {
+	height: 180px;
+}

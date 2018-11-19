@@ -1,0 +1,147 @@
+{% extends 'siteapp/empty.html' %}
+
+{% block metakeyw %}
+    <meta name="keywords" content="Ассортимент безалкогольных напитков {{ brand1.name }} Грузии лимонад минеральная вода"/>
+{% endblock metakeyw %}
+
+{% block metadescr %}
+    <meta name="description" content='Ассортимент напитков ТМ "{{ brand1.name }}". Информация о таре, упаковке, поддонах, сроках и условиях хранения'/>
+{% endblock metadescr %}
+
+{% block title %}
+    <title>ТМ "{{ brand1.name }}" ассортимент напитков </title>
+{% endblock title %}
+
+{% block content1 %}
+	<div class="row">
+		<div class="col s12 m4 l4">
+			<img class="brandlogo_detail" src="{{ MEDIA_URL }}{{ brand1.logo }}" alt="{{ brand1.name }} логотип">
+		</div>
+		<div class="col s12 m8 l8">
+            <h1 class="flow-text upper-case">ТМ "{{ brand1.name }}"</h1>
+            <div class="divider"></div>
+            <div class="branddescr">
+                <p class="large-text">{{ brand1.descr }}</p>
+            </div>
+		</div>
+	</div>
+    <div class="row">
+            <ul class="tabs">
+                {% for tara in taras %}
+                    <li class="tab z-depth-3 flow-text"><a href="#{{ tara.pk }}"><strong>{{ tara.material }},<br> {{ tara.volume }} л.</strong></a></li>
+                {% endfor %}
+            </ul>
+        {% for tara in taras %}
+            <div id="{{ tara.pk }}" class="col s12 m12 l12 z-depth-3">
+                <div class="row">
+                    <div class="col s12 m3 l3">
+                        <img class="brandlogo_detail" src="{{ MEDIA_URL }}{{ tara.photo }}" alt="{{tara.brand}} тара" />
+                        <div class="row center">
+                            <h5 class="upper-case blue-text text-lighten-1">{{ tara.material }}, {{ tara.volume }} л.</h5>
+                        </div>
+                    </div>
+                    <div class="col s12 m9 l9">
+                        <div class="row">
+                            <div class="col s12 m12 l12">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="medium-text">Ассортимент</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                {% for drink in drinks %}
+                                                    {% if drink.tara == tara %}
+                                                        <div class="col s6 m4 l3">
+                                                            <img class="drinkphoto materialboxed" data-caption="{{ drink.taste }}"
+                                                                 src="{{ MEDIA_URL }}{{ drink.photo }}" alt="{{tara.brand}}, {{ drink.taste }}" />
+                                                            <h6 class="drinktitle">{{ drink.taste }}</h6>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6 l6">
+                        <table class="highlight">
+                            <thead>
+                                <tr>
+                                    <th class="medium-text">Информация об упаковке</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Размеры(Д х Ш х В), мм:</td>
+                                    <td>{{ tara.pack_length }} x {{ tara.pack_width }} x {{ tara.pack_height }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Количество бутылок, шт:</td>
+                                    <td>{{ tara.pack_quant }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Вес брутто, кг:</td>
+                                    <td>{{ tara.pack_weight }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <table class="highlight">
+                            <thead>
+                                <tr>
+                                    <th class="medium-text">Информация о поддонах</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Размеры(Д х Ш), м:</td>
+                                    <td>{{ tara.pallet_length }} x {{ tara.pallet_width }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Количество бутылок, шт:</td>
+                                    <td>{{ tara.pallet_quant }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Масса брутто, кг:</td>
+                                    <td>{{ tara.pallet_weight_bru }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Масса нетто, кг:</td>
+                                    <td>{{ tara.pallet_weight_net }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="medium-text">Срок хранения и условия хранения</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>{{ tara.storage }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+	</div>
+
+{% endblock content1 %}

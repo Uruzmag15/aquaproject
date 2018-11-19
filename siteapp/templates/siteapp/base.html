@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+{% load staticfiles %}
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<!-- Meta tags-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="robots" content="noyaca"/>
+        {% block metakeyw %}
+            <meta name="keywords" content="импортер ассортимент лимонады Натахтари Саирме СНО Набеглави Владикавказ Аква Мир"/>
+        {% endblock metakeyw %}
+
+        {% block metadescr %}
+            <meta name="description" content='Официальный импортер грузинских безалкогольных напитков ТМ НАТАХТАРИ, САИРМЕ, СНО, НАБЕГЛАВИ В РФ.
+            Сотрудничаем напрямую с заводами изготовителями'/>
+        {% endblock metadescr %}
+
+		<!--Import Google Icon Font-->
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="{% static 'siteapp/css/materialize.min.css' %}" media="screen and (color)"/>
+		<!--Fontello css-->
+		<link type="text/css" rel="stylesheet" href="{% static 'siteapp/css/fontello.css' %}"/>
+        <!--Custom css-->
+		<link type="text/css" rel="stylesheet" href="{% static 'siteapp/css/siteapp.css' %}" media="screen and (color)"/>
+
+        {% block title %}
+            <title>"Аква Мир" - продажа Натахтари, Саирме, СНО, Набеглави в РФ</title>
+        {% endblock title %}
+
+	</head>
+	<body>
+		<!--header-->
+		<header>
+			<div class="navbar">
+				{% block dropdown %}
+				{% endblock dropdown %}
+				<nav>
+					<div class="nav-wrapper blue lighten-1">
+						<a href="{% url 'home' %}" class="brand-logo"><i class="icon-droplet"></i>Аква Мир</a>
+						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+						<ul id="nav-mobile" class="right hide-on-med-and-down">
+							<li><a class="medium-text" href="{% url 'home' %}">Главная</a></li>
+							<li><a class="medium-text dropdown-button" href="#!" data-activates="dropdown1">Каталог<i class="material-icons right">arrow_drop_down</i></a></li>
+							<li><a class="medium-text" href="{% url 'aboutus' %}">О нас</a></li>
+							<li><a class="medium-text" href="{% url 'partnership' %}">Партнерство</a></li>
+							<li><a class="medium-text" href="{% url 'contacts' %}">Контакты</a></li>
+						</ul>
+						<ul id="mobile-demo" class="side-nav blue lighten-1">
+							<li><a class="white-text" href="{% url 'home' %}">Главная</a></li>
+							<li><a class="white-text dropdown-button" href="#!" data-activates="dropdown2">Каталог<i class="material-icons right white-text">arrow_drop_down</i></a></li>
+							<li><a class="white-text" href="{% url 'aboutus' %}">О нас</a></li>
+							<li><a class="white-text" href="{% url 'partnership' %}">Партнерство</a></li>
+							<li><a class="white-text" href="{% url 'contacts' %}">Контакты</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!--main-->
+		<main>
+			{% block content %}
+			{% endblock %}
+		</main>
+		<!--footer-->
+		<footer class="page-footer  grey darken-1">
+ 			<div class="container">
+				<div class="row">
+					<div class="col l4 s12">
+ 						<h5 class="white-text">Аква Мир</h5>
+                        <p class="grey-text text-lighten-4">Официальный импортер лимонадов ТМ «НАТАХТАРИ»
+                            на территории РФ с 2011 года. Сотрудничаем напрямую с заводами изготовителями.</p>
+					</div>
+					<div class="col l3 offset-l1 s12">
+						<h5 class="white-text">Карта сайта</h5>
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="{% url 'home' %}">Главная</a></li>
+							<li><a class="grey-text text-lighten-3" href="{% url 'catalog' %}">Каталог</a></li>
+							<li><a class="grey-text text-lighten-3" href="{% url 'aboutus' %}">О нас</a></li>
+							<li><a class="grey-text text-lighten-3" href="{% url 'partnership' %}">Партнерство</a></li>
+							<li><a class="grey-text text-lighten-3" href="{% url 'contacts' %}">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="col l3 offset-l1 s12">
+						<h5 class="white-text">Контакты</h5>
+						<ul>
+							<li class="grey-text text-lighten-3"><i class="material-icons middle-text">phone</i> +7 (988) 830-77-22</li>
+							<li class="grey-text text-lighten-3"><i class="material-icons middle-text">email</i> akvamir-2015@inbox.ru</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright">
+				<div class="container">
+					© 2017 Copyright "Аква Мир"
+					<a class="grey-text text-lighten-4 right" href="#!">Разработка: oswebdev15@gmail.com</a>
+				</div>
+			</div>
+		</footer>
+
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="{% static 'siteapp/js/materialize.min.js' %}"></script>
+		<!-- Materialize init -->
+		<script>
+			$(document).ready(function() {
+				$(".button-collapse").sideNav();
+				$(".dropdown-button").dropdown();
+				$("ul.tabs").tabs();
+			});
+		</script>
+	</body>
+</html>

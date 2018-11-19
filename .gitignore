@@ -1,0 +1,8 @@
+*.pyc
+*.txt
+__pycache__
+.idea/
+db.sqlite3
+.DS_Store
+settings.py
+*.jpg
